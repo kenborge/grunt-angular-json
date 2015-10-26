@@ -17,6 +17,36 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-angular-json');
 ```
 
+## Expample
+
+### Input
+
+```JSON
+//first.json
+{
+    "field1": "value1",
+    "field2": true,
+    "field-3": 10
+}
+```
+```JSON
+//second.json
+{
+    "field1": "value2"
+}
+```
+
+### Output
+```js
+angular.module('angular_json', []).value('first', {
+    field1: 'value1',
+    field2: true,
+    'field-3': 10
+}).value('second', {
+    field1: 'value2'
+});
+```
+
 ## The "angular_json" task
 
 ### Overview
