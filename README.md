@@ -68,7 +68,7 @@ grunt.initConfig({
 ### Options
 
 #### options.indent
-Type: `Number`
+Type: `String`
 Default value: `'    '`
 
 What characters to use as indentation in the generated javascript files, default 4 spaces.
@@ -79,9 +79,9 @@ Default value: `'angular_json'`
 
 A string value that will be used as the name for the angular module generated.
 
-#### options.module
+#### options.merge
 Type: `Boolean`
-Default value: `'false'`
+Default value: `false`
 
 A boolean value indicating if the task should merge the json objects when multiple source files
 are provided for the same destination.
