@@ -21,7 +21,10 @@ module.exports = function(grunt) {
         var options = this.options({
             module: 'angular_json',
             indent: '    ',
-            merge: false
+            merge: false,
+            generateName: function(fileName, fullPath) {
+                return fileName;
+            }
         });
 
         // Iterate over all specified file groups.
@@ -38,7 +41,7 @@ module.exports = function(grunt) {
             }).map(function(filepath) {
                 //Read json from file
                 return {
-                    name: path.basename(filepath, '.json'),
+                    name: options.generateName(path.basename(filepath, '.json'), filepath),
                     json: grunt.file.readJSON(filepath)
                 };
             });
@@ -48,7 +51,8 @@ module.exports = function(grunt) {
                     return data.json;
                 });
                 src = extend.bind(true).apply(null, args);
-                src = valueTemplate(path.basename(f.dest, '.js'), src);
+                var valueName = options.generateName(path.basename(f.dest, '.js'), f.dest);
+                src = valueTemplate(valueName, src);
             } else {
                 src = src.map(function(data) {
                     return valueTemplate(data.name, data.json);

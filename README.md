@@ -86,25 +86,13 @@ Default value: `false`
 A boolean value indicating if the task should merge the json objects when multiple source files
 are provided for the same destination.
 
-### Usage Examples
+#### options.generateName
+Type `Function`
+Default value: filename
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  angular_json: {
-    options: {
-        indent: '  ',
-        module: 'myModule',
-        merge: true
-    },
-    files: {
-      'dest/out.js': ['src/in1.json', 'src/in2.js'],
-    },
-  },
-});
-```
+A function that will be called with the filename as first parameter and full path as second parameter. Should return a name that will be used as the value name in angular.
+For `merge: false` this is called with the src files
+For `merge: true` this is called with teh destination file. 
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

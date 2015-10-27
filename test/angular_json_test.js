@@ -62,5 +62,23 @@ exports.angular_json = {
         test.equal(actual, expected, 'merge option did not generate correct output.');
 
         test.done();
+    },
+    option_generatename: function(test) {
+        test.expect(1);
+
+        var actual = grunt.file.read('tmp/option_generatename.js');
+        var expected = grunt.file.read('test/expected/option_generatename');
+        test.equal(actual, expected, 'generateName option did not generate correct output.');
+
+        test.done();
+    },
+    option_generatename_merge: function(test) {
+        test.expect(1);
+
+        var actual = grunt.file.read('tmp/option_generatename_merge.js');
+        var expected = grunt.file.read('test/expected/option_generatename_merge');
+        test.equal(actual, expected, 'generateName option with merge option did not generate correct output.');
+
+        test.done();
     }
 };

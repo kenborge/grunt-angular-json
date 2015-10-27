@@ -59,6 +59,37 @@ module.exports = function(grunt) {
                 files: {
                     'tmp/option_merge.js': ['test/fixtures/merge1.json', 'test/fixtures/merge2.json']
                 }
+            },
+            option_generatename: {
+                options: {
+                    generateName: function(fileName, path) {
+                        switch (fileName) {
+                            case 'first':
+                                return 'customName1';
+                            case 'second':
+                                return 'customName2';
+                        }
+                        return 'undefined';
+                    }
+                },
+                files: {
+                    'tmp/option_generatename.js': ['test/fixtures/first.json', 'test/fixtures/second.json']
+                }
+            },
+
+            option_generatename_merge: {
+                options: {
+                    generateName: function(fileName, path) {
+                        if (fileName === 'option_generatename_merge') {
+                            return 'customName';
+                        }
+                        return 'undefined';
+                    },
+                    merge: true
+                },
+                files: {
+                    'tmp/option_generatename_merge.js': ['test/fixtures/merge1.json', 'test/fixtures/merge2.json']
+                }
             }
         },
 
