@@ -1,4 +1,4 @@
-angular.module('angular_json', []).value('option_merge', {
+angular.module('angular_json', []).value('customName', {
     field1: {
         field2: 'override1',
         field3: {

@@ -1,6 +1,9 @@
 {
     "field1": {
-        "field2": "value3"
+        "field2": "override1",
+        "field3": {
+            "field5": "override2"
+        }
     },
-    "field4": "value4"
+    "field6": "override3"
 }

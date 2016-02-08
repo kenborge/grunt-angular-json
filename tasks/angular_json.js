@@ -9,7 +9,7 @@
 'use strict';
 var path = require('path');
 var stringifyObject = require('stringify-object');
-var extend = require('extend');
+var merge = require('deepmerge');
 
 module.exports = function(grunt) {
 
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                 var args = src.map(function(data) {
                     return data.json;
                 });
-                src = extend.bind(true).apply(null, args);
+                src = merge.apply(null, args);
                 var valueName = options.generateName(path.basename(f.dest, '.js'), f.dest);
                 src = valueTemplate(valueName, src);
             } else {

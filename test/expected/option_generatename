@@ -1,0 +1,7 @@
+angular.module('angular_json', []).value('customName1', {
+    field1: 'value1',
+    field2: true,
+    'field-3': 10
+}).value('customName2', {
+    field1: 'value2'
+});
