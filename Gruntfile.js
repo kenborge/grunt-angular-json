@@ -60,6 +60,14 @@ module.exports = function(grunt) {
                     'tmp/option_merge.js': ['test/fixtures/merge1.json', 'test/fixtures/merge2.json']
                 }
             },
+            option_merge_one_file: {
+                options: {
+                    merge: true,
+                },
+                files: {
+                    'tmp/option_merge_one_file.js': ['test/fixtures/merge1.json']
+                }
+            },
             option_generatename: {
                 options: {
                     generateName: function(fileName, path) {
