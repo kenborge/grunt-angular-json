@@ -1,7 +1,7 @@
 {
     "name": "grunt-angular-json",
     "description": "Merge and convert JSON files into angular modules",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "homepage": "https://github.com/kenborge/grunt-angular-json",
     "author": {
         "name": "Ken Børge Viktil",
