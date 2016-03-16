@@ -50,11 +50,9 @@ module.exports = function(grunt) {
                 var args = src.map(function(data) {
                     return data.json;
                 });
-                if(args.length > 1) {
-                    src = merge.apply(null, args);
-                } else {
-                    src = args[0];
-                }
+                src = args.reduce(function(res, next) {
+                    return merge(res, next);
+                }, {});
                 var valueName = options.generateName(path.basename(f.dest, '.js'), f.dest);
                 src = valueTemplate(valueName, src);
             } else {

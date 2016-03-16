@@ -80,5 +80,21 @@ exports.angular_json = {
         test.equal(actual, expected, 'generateName option with merge option did not generate correct output.');
 
         test.done();
+    },
+    option_merge_one_file: function (test) {
+        test.expect(1);
+        var actual = grunt.file.read('tmp/option_merge_one_file.js');
+        var expected = grunt.file.read('test/expected/option_merge_one_file');
+        test.equal(actual, expected, 'did not merge a single file correctly');
+
+        test.done();
+    },
+    multi_files_merge: function (test) {
+        test.expect(1);
+        var actual = grunt.file.read('tmp/multi_files_merge.js');
+        var expected = grunt.file.read('test/expected/multi_files_merge');
+        test.equal(actual, expected, 'did not merge multiple files correctly(more then 2)');
+
+        test.done();
     }
 };

@@ -1,4 +1,4 @@
-angular.module('angular_json', []).value('option_merge', {
+angular.module('angular_json', []).value('option_merge_one_file', {
     field1: {
         field2: 'value1',
         field3: {

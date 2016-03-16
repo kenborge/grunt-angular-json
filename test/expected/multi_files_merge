@@ -1,0 +1,5 @@
+angular.module('angular_json', []).value('multi_files_merge', {
+    field1: 'value1',
+    field2: true,
+    'field-3': 10
+});

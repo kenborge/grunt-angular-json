@@ -98,6 +98,15 @@ module.exports = function(grunt) {
                 files: {
                     'tmp/option_generatename_merge.js': ['test/fixtures/merge1.json', 'test/fixtures/merge2.json']
                 }
+            },
+
+            multi_files_merge: {
+                options: {
+                    merge: true
+                },
+                files: {
+                    'tmp/multi_files_merge.js': ['test/fixtures/multi1.json', 'test/fixtures/multi2.json', 'test/fixtures/multi3.json']
+                }
             }
         },
 
